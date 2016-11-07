@@ -1,0 +1,28 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile (
+        "it.unibo.alchemist:alchemist:$alchemistVersion"
+    )
+}
+
+task runAlchemist(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    classpath 'src/main/protelis'
+    classpath 'src/main/java'
+     maxHeapSize = "4g"
+    main = 'it.unibo.alchemist.Alchemist'
+    
+    args(
+        "-y", "src/main/yaml/${simulation}.yml",
+        "-g", "src/main/effects/${simulation}.aes",
+    )
+}
+runAlchemist.dependsOn(compileJava)
+
+defaultTasks('runAlchemist')
