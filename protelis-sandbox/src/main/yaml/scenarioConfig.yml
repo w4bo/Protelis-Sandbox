@@ -1,0 +1,38 @@
+incarnation: protelis
+  
+network-model:
+  type: EuclideanDistance
+  parameters: [200]
+  
+environment: 
+  type: OSMEnvironment
+  parameters: [src/main/resources/cesena.pbf]
+  
+positions:
+  type: LatLongPosition
+  
+pools:
+  - pool: &helloWorld
+    - time-distribution: 1
+      program: helloWorld
+  - pool: &distanceTo
+    - time-distribution: 1
+      program: distanceTo
+    - time-distribution: null
+      program: send
+      
+displacements:
+  - in:
+      type: Grid 
+      parameters: [44.1323, 12.233, 44.140256, 12.257449, 0.001, 0.001, 0, 0]
+#    contents:
+#      - molecule: source
+#        concentration: true
+#      - in:
+#          type: Rectangle
+#          parameters: [43, 12, 2, 2]
+#        molecule: source
+#        concentration: true
+    programs: 
+      - *distanceTo
+      - *helloWorld

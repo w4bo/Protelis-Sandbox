@@ -1,0 +1,11 @@
+module distanceTo
+def distanceTo(source) {
+    rep (distance <- Infinity) {
+        mux (source) {
+            0
+        } else {
+            minHood(nbr(distance) + 1)
+        } 
+    }
+}
+distanceTo(self.getDeviceUID().toString() == "0")
