@@ -1,15 +1,17 @@
 # Protelis-Sandbox
-A sandbox environment for debugging Protelis code through Alchemist simulator
+
+A sandbox environment for debugging Protelis code through [Alchemist Simulator](https://github.com/AlchemistSimulator/Alchemist)
+
 ## Getting Started
 
-These instructions describe how to set up and run the simulation.
+These instructions describe how to set up and run the simulation
 
 ### Structure
 
-How the simulation should be structured.
+How the simulation is structured
 
 ```
-/protelis-sandbox/
+/protelis-sandbox/src/main/
 |------> effects/ (add effects to the simulation)
 |------> protelis/ (protelis code)
 |------> resources/ (maps, ...)
@@ -17,12 +19,14 @@ How the simulation should be structured.
 ```
 ### Dependencies
 
-This project only depends on [Alchemist Simulator](https://github.com/AlchemistSimulator/Alchemist). Change `alchemistVersion` in `gradle.properties` to choose the Alchemist release to run the simulation.
+Change the `alchemistVersion` in `gradle.properties` to run the simulation with a different Alchemist release
 
 ### Modify and run the simulation
 
-To execute the simulation enter `protelis-sandbox/` and run
+To execute the simulation
 ```
+cd protelis-sandbox
 ./gradlew
 ```
-To change the simulation to be executed modify `simulation` in `gradle.properties`. Note that by default effects should have the same name of the simulation.
+
+Modify `simulation` in `gradle.properties` to change the simulation which will be executed. Note that by default simulation effects should have the same name of the simulation.
