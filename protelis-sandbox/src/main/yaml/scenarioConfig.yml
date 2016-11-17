@@ -25,14 +25,6 @@ displacements:
   - in:
       type: Grid 
       parameters: [44.1323, 12.233, 44.140256, 12.257449, 0.001, 0.001, 0, 0]
-#    contents:
-#      - molecule: source
-#        concentration: true
-#      - in:
-#          type: Rectangle
-#          parameters: [43, 12, 2, 2]
-#        molecule: source
-#        concentration: true
     programs: 
       - *distanceTo
       - *helloWorld

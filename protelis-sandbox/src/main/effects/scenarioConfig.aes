@@ -67,6 +67,67 @@
     "red": {
       "max": 255,
       "min": 0,
+      "val": 0
+    },
+    "blue": {
+      "max": 255,
+      "min": 0,
+      "val": 0
+    },
+    "green": {
+      "max": 255,
+      "min": 0,
+      "val": 255
+    },
+    "alpha": {
+      "max": 255,
+      "min": 0,
+      "val": 255
+    },
+    "scaleFactor": {
+      "max": 100,
+      "min": 0,
+      "val": 50
+    },
+    "size": {
+      "max": 100,
+      "min": 0,
+      "val": 17
+    },
+    "molFilter": true,
+    "molString": "source",
+    "molPropertyFilter": true,
+    "property": "",
+    "writingPropertyValue": false,
+    "c": "Alpha",
+    "reverse": false,
+    "propoom": {
+      "max": 10,
+      "min": -10,
+      "val": 0
+    },
+    "minprop": {
+      "max": 10,
+      "min": -10,
+      "val": 0
+    },
+    "maxprop": {
+      "max": 10,
+      "min": -10,
+      "val": 1
+    },
+    "colorCache": {
+      "value": -16711936,
+      "falpha": 0.0
+    }
+  },
+  {
+    "type": "class it.unibo.alchemist.boundary.gui.effects.DrawShape",
+    "curIncarnation": "protelis",
+    "mode": "FillEllipse",
+    "red": {
+      "max": 255,
+      "min": 0,
       "val": 255
     },
     "blue": {
@@ -104,7 +165,7 @@
     "propoom": {
       "max": 10,
       "min": -10,
-      "val": 1
+      "val": 3
     },
     "minprop": {
       "max": 10,
@@ -114,7 +175,7 @@
     "maxprop": {
       "max": 10,
       "min": -10,
-      "val": 2
+      "val": 3
     },
     "colorCache": {
       "value": -65536,

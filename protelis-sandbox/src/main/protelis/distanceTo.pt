@@ -1,11 +1,5 @@
 module distanceTo
-def distanceTo(source) {
-    rep (distance <- Infinity) {
-        mux (source) {
-            0
-        } else {
-            minHood(nbr(distance) + 1)
-        } 
-    }
-}
-distanceTo(self.getDeviceUID().toString() == "0")
+import protelis:coord:spreading
+let source = self.getDeviceUID().toString() == "0";
+env.put("source", source);
+distanceTo(source)
