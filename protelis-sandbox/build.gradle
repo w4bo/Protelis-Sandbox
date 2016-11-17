@@ -1,8 +1,15 @@
-apply plugin: "java"
-apply plugin: "eclipse"
+apply plugin: 'java'
+apply plugin: 'eclipse'
 
 repositories {
     mavenCentral()
+}
+
+eclipse {
+    classpath {
+        downloadSources = true
+        downloadJavadoc = true
+    }
 }
 
 dependencies {
@@ -13,16 +20,15 @@ dependencies {
 
 task runAlchemist(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    classpath 'src/main/protelis'
-    classpath 'src/main/java'
-     maxHeapSize = "4g"
-    main = 'it.unibo.alchemist.Alchemist'
-    
+    classpath "src/main/protelis"
+    classpath "src/main/java"
+    maxHeapSize = "4g"
+    main = "it.unibo.alchemist.Alchemist"
     args(
         "-y", "src/main/yaml/${simulation}.yml",
         "-g", "src/main/effects/${simulation}.aes",
     )
+    dependsOn(compileJava)
 }
-runAlchemist.dependsOn(compileJava)
 
-defaultTasks('runAlchemist')
+defaultTasks("runAlchemist")
