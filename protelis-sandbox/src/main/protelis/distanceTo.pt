@@ -1,5 +1,8 @@
 module distanceTo
 import protelis:coord:spreading
+
 let source = self.getDeviceUID().toString() == "0";
 env.put("source", source);
-distanceTo(source)
+let res = distanceTo(source);
+env.put("distance", res);
+res

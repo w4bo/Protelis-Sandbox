@@ -27,6 +27,8 @@ task runAlchemist(type: JavaExec) {
     args(
         "-y", "src/main/yaml/${simulation}.yml",
         "-g", "src/main/effects/${simulation}.aes",
+        "-t", "500",
+        "-e", "data/exportedData"
     )
     dependsOn(compileJava)
 }

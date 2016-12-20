@@ -20,7 +20,7 @@ pools:
       program: distanceTo
     - time-distribution: null
       program: send
-      
+
 displacements:
   - in:
       type: Grid 
@@ -28,3 +28,9 @@ displacements:
     programs: 
       - *distanceTo
       - *helloWorld
+
+export:
+  - time
+  - number-of-nodes
+  - molecule: distance
+    aggregators: [mean]
