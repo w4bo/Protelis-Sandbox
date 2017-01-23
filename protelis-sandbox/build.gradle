@@ -27,8 +27,23 @@ task runAlchemist(type: JavaExec) {
     args(
         "-y", "src/main/yaml/${simulation}.yml",
         "-g", "src/main/effects/${simulation}.aes",
-        "-t", "500",
-        "-e", "data/exportedData"
+        "-t", "300"
+    )
+    dependsOn(compileJava)
+}
+
+task runBatch(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    classpath "src/main/protelis"
+    classpath "src/main/java"
+    maxHeapSize = "8g"
+    main = "it.unibo.alchemist.Alchemist"
+    args(
+        "-y", "src/main/yaml/${simulation}.yml",
+        "-g", "src/main/effects/${simulation}.aes",
+        "-t", "200",
+        "-b", "-var", "n", "seed",
+        "-e", "data/${simulation}-batch"
     )
     dependsOn(compileJava)
 }
